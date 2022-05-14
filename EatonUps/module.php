@@ -23,7 +23,9 @@ class EatonUps extends IPSModule {
 			Array("ident" => "RemainingMinutes", 	"caption" => "Remaining Runtime", 			"type" => "Integer", 	"profile" => "~TimePeriodMin.KNX",			"oid" => '.1.3.6.1.2.1.33.1.2.3.0', 				"factor" => false, 	"writeable" => false),
 			Array("ident" => "BatteryCapacity", 	"caption" => "Battery Capacity", 			"type" => "Integer", 	"profile" => "~Battery.100",				"oid" => '.1.3.6.1.2.1.33.1.2.4.0', 				"factor" => false, 	"writeable" => false),
 			Array("ident" => "BatteryVoltage", 		"caption" => "Battery Voltage", 			"type" => "Float", 		"profile" => "~Volt", 						"oid" => '.1.3.6.1.2.1.33.1.2.5.0', 				"factor" => 0.1, 	"writeable" => false),
-			Array("ident" => "BatteryStatus", 		"caption" => "Battery Status", 				"type" => "Integer", 	"profile" => "EATONUPS.BatteryStatus",		"oid" => '.1.3.6.1.2.1.33.1.2.1.0', 				"factor" => false, 	"writeable" => false)
+			Array("ident" => "BatteryStatus", 		"caption" => "Battery Status", 				"type" => "Integer", 	"profile" => "EATONUPS.BatteryStatus",		"oid" => '.1.3.6.1.2.1.33.1.2.1.0', 				"factor" => false, 	"writeable" => false),
+			Array("ident" => "OutputPower", 		"caption" => "Output Power", 				"type" => "Float", 		"profile" => "~Watt.3680",					"oid" => '.1.3.6.1.2.1.33.1.4.4.1.4.1', 			"factor" => false, 	"writeable" => false),
+			Array("ident" => "OutputLoad", 			"caption" => "Output Load", 				"type" => "Integer", 	"profile" => "~Intensity.100",				"oid" => '.1.3.6.1.2.1.33.1.4.4.1.5.1',				"factor" => false, 	"writeable" => false)
 		);
 	}
  
