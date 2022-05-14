@@ -12,17 +12,18 @@ class EatonUps extends IPSModule {
 		// Selbsterstellter Code
 		// Define all the data
 		$this->snmpVariables = Array(
-			Array("ident" => "Model", 				"caption" => "Model", 						"type" => "String", 	"profile" => false, 				"oid" => '.1.3.6.1.4.1.534.10.2.1.2.0', 			"factor" => false, 	"writeable" => false),
-			Array("ident" => "SerialNumber", 		"caption" => "Serial Number", 				"type" => "String", 	"profile" => false, 				"oid" => '.1.3.6.1.4.1.534.10.2.1.5.0', 			"factor" => false, 	"writeable" => false),
-			Array("ident" => "CardFirmwareVersion", "caption" => "Card Firmware Version",		"type" => "String", 	"profile" => false, 				"oid" => '.1.3.6.1.4.1.534.10.2.1.7.0', 			"factor" => false, 	"writeable" => false),
-			Array("ident" => "FirmwareVersion", 	"caption" => "Firmware Version", 			"type" => "String", 	"profile" => false, 				"oid" => '.1.3.6.1.4.1.534.10.2.1.3.0', 			"factor" => false, 	"writeable" => false),
-			Array("ident" => "OutputVoltage", 		"caption" => "Output Voltage", 				"type" => "Float", 		"profile" => "~Volt.230", 			"oid" => '.1.3.6.1.4.1.534.10.2.2.3.1.0', 			"factor" => 0.1, 	"writeable" => false),
-			Array("ident" => "OutputCurrent", 		"caption" => "Output Current", 				"type" => "Float", 		"profile" => "~Ampere.16", 			"oid" => '.1.3.6.1.4.1.534.10.2.2.3.2.0', 			"factor" => 0.1, 	"writeable" => false),
-			Array("ident" => "InputVoltage", 		"caption" => "Input Voltage", 				"type" => "Float", 		"profile" => "~Volt.230", 			"oid" => '.1.3.6.1.4.1.534.10.2.2.2.1.2.1', 		"factor" => 0.1, 	"writeable" => false),
-			Array("ident" => "InputFrequency", 		"caption" => "Input Frequency", 			"type" => "Float", 		"profile" => "~Hertz.50", 			"oid" => '.1.3.6.1.4.1.534.10.2.2.2.1.3.1', 		"factor" => 0.1, 	"writeable" => false),
-			Array("ident" => "RemainingMinutes", 	"caption" => "Remaining Runtime", 			"type" => "Integer", 	"profile" => "~TimePeriodMin.KNX",	"oid" => '.1.3.6.1.2.1.33.1.2.3.0', 				"factor" => false, 	"writeable" => false),
-			Array("ident" => "BatteryCapacity", 	"caption" => "Battery Capacity", 			"type" => "Integer", 	"profile" => "~Battery.100",		"oid" => '.1.3.6.1.2.1.33.1.2.4.0', 				"factor" => false, 	"writeable" => false),
-			Array("ident" => "BatteryVoltage", 		"caption" => "Battery Voltage", 			"type" => "Float", 		"profile" => "~Volt", 				"oid" => '.1.3.6.1.2.1.33.1.2.5.0', 				"factor" => 0.1, 	"writeable" => false)
+			Array("ident" => "Model", 				"caption" => "Model", 						"type" => "String", 	"profile" => false, 							"oid" => '.1.3.6.1.4.1.534.10.2.1.2.0', 			"factor" => false, 	"writeable" => false),
+			Array("ident" => "SerialNumber", 		"caption" => "Serial Number", 				"type" => "String", 	"profile" => false, 							"oid" => '.1.3.6.1.4.1.534.10.2.1.5.0', 			"factor" => false, 	"writeable" => false),
+			Array("ident" => "CardFirmwareVersion", "caption" => "Card Firmware Version",		"type" => "String", 	"profile" => false, 							"oid" => '.1.3.6.1.4.1.534.10.2.1.7.0', 			"factor" => false, 	"writeable" => false),
+			Array("ident" => "FirmwareVersion", 	"caption" => "Firmware Version", 			"type" => "String", 	"profile" => false, 							"oid" => '.1.3.6.1.4.1.534.10.2.1.3.0', 			"factor" => false, 	"writeable" => false),
+			Array("ident" => "OutputVoltage", 		"caption" => "Output Voltage", 				"type" => "Float", 		"profile" => "~Volt.230", 						"oid" => '.1.3.6.1.4.1.534.10.2.2.3.1.0', 			"factor" => 0.1, 	"writeable" => false),
+			Array("ident" => "OutputCurrent", 		"caption" => "Output Current", 				"type" => "Float", 		"profile" => "~Ampere.16", 						"oid" => '.1.3.6.1.4.1.534.10.2.2.3.2.0', 			"factor" => 0.1, 	"writeable" => false),
+			Array("ident" => "InputVoltage", 		"caption" => "Input Voltage", 				"type" => "Float", 		"profile" => "~Volt.230", 						"oid" => '.1.3.6.1.4.1.534.10.2.2.2.1.2.1', 		"factor" => 0.1, 	"writeable" => false),
+			Array("ident" => "InputFrequency", 		"caption" => "Input Frequency", 			"type" => "Float", 		"profile" => "~Hertz.50", 						"oid" => '.1.3.6.1.4.1.534.10.2.2.2.1.3.1', 		"factor" => 0.1, 	"writeable" => false),
+			Array("ident" => "RemainingMinutes", 	"caption" => "Remaining Runtime", 			"type" => "Integer", 	"profile" => "~TimePeriodMin.KNX",				"oid" => '.1.3.6.1.2.1.33.1.2.3.0', 				"factor" => false, 	"writeable" => false),
+			Array("ident" => "BatteryCapacity", 	"caption" => "Battery Capacity", 			"type" => "Integer", 	"profile" => "~Battery.100",					"oid" => '.1.3.6.1.2.1.33.1.2.4.0', 				"factor" => false, 	"writeable" => false),
+			Array("ident" => "BatteryVoltage", 		"caption" => "Battery Voltage", 			"type" => "Float", 		"profile" => "~Volt", 							"oid" => '.1.3.6.1.2.1.33.1.2.5.0', 				"factor" => 0.1, 	"writeable" => false),
+			Array("ident" => "BatteryStatus", 		"caption" => "Battery Status", 				"type" => "Integer", 	"profile" => $variableProfileBatteryStatus,		"oid" => '.1.3.6.1.2.1.33.1.2.1.0', 				"factor" => false, 	"writeable" => false)
 		);
 	}
  
@@ -39,7 +40,17 @@ class EatonUps extends IPSModule {
 		$this->RegisterPropertyBoolean("DebugOutput",false);
 
 		// Variable profiles
+		$variableProfileBatteryStatus = "EATONUPS.BatteryStatus";
+		if (IPS_VariableProfileExists($variableProfileBatteryStatus) ) {
 		
+			IPS_DeleteVariableProfile($variableProfileBatteryStatus);
+		}			
+		IPS_CreateVariableProfile($variableProfileBatteryStatus, 1);
+		IPS_SetVariableProfileIcon($variableProfileBatteryStatus, "Battery");
+		IPS_SetVariableProfileAssociation($variableProfileBatteryStatus, 1, "Unknown", "", 0xFF00FF);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryStatus, 2, "Normal", "", 0x00FF00);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryStatus, 3, "Low", "", 0xFFFF00);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryStatus, 4, "Depleted", "", 0xFF0000);
 	
 		// Variables
 		$stringVariables = $this->GetVariablesByType("String");
