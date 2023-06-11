@@ -28,7 +28,9 @@ class EatonUps extends IPSModule {
 			Array("ident" => "OutputLoad", 			"caption" => "Output Load", 				"type" => "Integer", 	"profile" => "~Intensity.100",				"oid" => '1.3.6.1.2.1.33.1.4.4.1.5.1',			"factor" => false, 	"writeable" => false),
 			Array("ident" => "InternalTemperature",	"caption" => "Internal Temperature", 		"type" => "Float", 		"profile" => "~Temperature",				"oid" => '1.3.6.1.4.1.534.1.6.1.0',				"factor" => false, 	"writeable" => false),
 			Array("ident" => "InputSource",			"caption" => "Input Source", 				"type" => "Integer", 	"profile" => "EATONUPS.InputSource",		"oid" => '1.3.6.1.4.1.534.1.3.5.0',				"factor" => false, 	"writeable" => false),
-			Array("ident" => "OutputSource",		"caption" => "Output Source", 				"type" => "Integer", 	"profile" => "EATONUPS.OutputSource",		"oid" => '1.3.6.1.4.1.534.1.4.5.0',				"factor" => false, 	"writeable" => false)
+			Array("ident" => "OutputSource",		"caption" => "Output Source", 				"type" => "Integer", 	"profile" => "EATONUPS.OutputSource",		"oid" => '1.3.6.1.4.1.534.1.4.5.0',				"factor" => false, 	"writeable" => false),
+			Array("ident" => "BatteryManagementStatus",	"caption" => "Battery Management Status", "type" => "Integer", 	"profile" => "EATONUPS.BatteryManagementStatus", "oid" => '1.3.6.1.4.1.534.1.2.5.0',		"factor" => false, 	"writeable" => false),
+			Array("ident" => "BatteryTestStatus",	"caption" => "Battery Test Status", 		"type" => "Integer", 	"profile" => "EATONUPS.BatteryTestStatus",	"oid" => '1.3.6.1.4.1.534.1.8.2.0',				"factor" => false, 	"writeable" => false)
 		);
 	}
  
@@ -90,6 +92,37 @@ class EatonUps extends IPSModule {
 		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 8, "Parallel Capacity", "", -1);
 		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 9, "Parallel Redundant", "", -1);
 		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 10, "High Efficiency Mode", "", -1);
+
+		$variableProfileBatteryManagementStatus = "EATONUPS.BatteryManagementStatus";
+		if (IPS_VariableProfileExists($variableProfileBatteryManagementStatus) ) {
+		
+			IPS_DeleteVariableProfile($variableProfileBatteryManagementStatus);
+		}			
+		IPS_CreateVariableProfile($variableProfileBatteryManagementStatus, 1);
+		IPS_SetVariableProfileIcon($variableProfileBatteryManagementStatus, "Battery");
+		IPS_SetVariableProfileAssociation($variableProfileBatteryManagementStatus, 1, "Charging", "", 0xFFFF00);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryManagementStatus, 2, "Discharging", "", 0xFFFF00);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryManagementStatus, 3, "Floating", "", 0x00FF00);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryManagementStatus, 4, "Resting", "", 0x00FF00);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryManagementStatus, 5, "Unknown", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryManagementStatus, 6, "Disconnected", "", 0xFF0000);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryManagementStatus, 7, "Under Test", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryManagementStatus, 8, "Check Battery", "", 0xFF0000);
+	
+		$variableProfileBatteryTestStatus = "EATONUPS.BatteryTestStatus";
+		if (IPS_VariableProfileExists($variableProfileBatteryTestStatus) ) {
+		
+			IPS_DeleteVariableProfile($variableProfileBatteryTestStatus);
+		}			
+		IPS_CreateVariableProfile($variableProfileBatteryTestStatus, 1);
+		IPS_SetVariableProfileIcon($variableProfileBatteryTestStatus, "Battery");
+		IPS_SetVariableProfileAssociation($variableProfileBatteryTestStatus, 1, "Unknown", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryTestStatus, 2, "Passed", "", 0x00FF00);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryTestStatus, 3, "Failed", "", 0xFF0000);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryTestStatus, 4, "In Progress", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryTestStatus, 5, "Not Supported", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryTestStatus, 6, "Inhibited", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileBatteryTestStatus, 7, "Scheduled", "", -1);
 
 		// Variables
 		$stringVariables = $this->GetVariablesByType("String");
