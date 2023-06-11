@@ -26,7 +26,7 @@ class EatonUps extends IPSModule {
 			Array("ident" => "BatteryStatus", 		"caption" => "Battery Status", 				"type" => "Integer", 	"profile" => "EATONUPS.BatteryStatus",		"oid" => '1.3.6.1.2.1.33.1.2.1.0', 				"factor" => false, 	"writeable" => false),
 			Array("ident" => "OutputPower", 		"caption" => "Output Power", 				"type" => "Float", 		"profile" => "~Watt.3680",					"oid" => '1.3.6.1.2.1.33.1.4.4.1.4.1', 			"factor" => false, 	"writeable" => false),
 			Array("ident" => "OutputLoad", 			"caption" => "Output Load", 				"type" => "Integer", 	"profile" => "~Intensity.100",				"oid" => '1.3.6.1.2.1.33.1.4.4.1.5.1',			"factor" => false, 	"writeable" => false),
-			Array("ident" => "InternalTemperature",	"caption" => "Internal Temperature", 		"type" => "Float", 		"profile" => "~Temperature",				"oid" => '1.3.6.1.4.1.534.1.6.5',				"factor" => 0.1, 	"writeable" => false)
+			Array("ident" => "InternalTemperature",	"caption" => "Internal Temperature", 		"type" => "Float", 		"profile" => "~Temperature",				"oid" => '1.3.6.1.4.1.534.1.6.1.0',				"factor" => false, 	"writeable" => false)
 		);
 	}
  
