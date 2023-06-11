@@ -16,8 +16,8 @@ class EatonUps extends IPSModule {
 			Array("ident" => "SerialNumber", 		"caption" => "Serial Number", 				"type" => "String", 	"profile" => false, 						"oid" => '1.3.6.1.4.1.534.10.2.1.5.0', 			"factor" => false, 	"writeable" => false),
 			Array("ident" => "CardFirmwareVersion", "caption" => "Card Firmware Version",		"type" => "String", 	"profile" => false, 						"oid" => '1.3.6.1.4.1.534.10.2.1.7.0', 			"factor" => false, 	"writeable" => false),
 			Array("ident" => "FirmwareVersion", 	"caption" => "Firmware Version", 			"type" => "String", 	"profile" => false, 						"oid" => '1.3.6.1.4.1.534.10.2.1.3.0', 			"factor" => false, 	"writeable" => false),
-			Array("ident" => "OutputVoltage", 		"caption" => "Output Voltage", 				"type" => "Float", 		"profile" => "~Volt.230", 					"oid" => '1.3.6.1.4.1.534.10.2.2.3.1.0', 			"factor" => 0.1, 	"writeable" => false),
-			Array("ident" => "OutputCurrent", 		"caption" => "Output Current", 				"type" => "Float", 		"profile" => "~Ampere.16", 					"oid" => '1.3.6.1.4.1.534.10.2.2.3.2.0', 			"factor" => 0.1, 	"writeable" => false),
+			Array("ident" => "OutputVoltage", 		"caption" => "Output Voltage", 				"type" => "Float", 		"profile" => "~Volt.230", 					"oid" => '1.3.6.1.4.1.534.10.2.2.3.1.0', 		"factor" => 0.1, 	"writeable" => false),
+			Array("ident" => "OutputCurrent", 		"caption" => "Output Current", 				"type" => "Float", 		"profile" => "~Ampere.16", 					"oid" => '1.3.6.1.4.1.534.10.2.2.3.2.0', 		"factor" => 0.1, 	"writeable" => false),
 			Array("ident" => "InputVoltage", 		"caption" => "Input Voltage", 				"type" => "Float", 		"profile" => "~Volt.230", 					"oid" => '1.3.6.1.4.1.534.10.2.2.2.1.2.1', 		"factor" => 0.1, 	"writeable" => false),
 			Array("ident" => "InputFrequency", 		"caption" => "Input Frequency", 			"type" => "Float", 		"profile" => "~Hertz.50", 					"oid" => '1.3.6.1.4.1.534.10.2.2.2.1.3.1', 		"factor" => 0.1, 	"writeable" => false),
 			Array("ident" => "RemainingMinutes", 	"caption" => "Remaining Runtime", 			"type" => "Integer", 	"profile" => "~TimePeriodMin.KNX",			"oid" => '1.3.6.1.2.1.33.1.2.3.0', 				"factor" => false, 	"writeable" => false),
@@ -25,7 +25,8 @@ class EatonUps extends IPSModule {
 			Array("ident" => "BatteryVoltage", 		"caption" => "Battery Voltage", 			"type" => "Float", 		"profile" => "~Volt", 						"oid" => '1.3.6.1.2.1.33.1.2.5.0', 				"factor" => 0.1, 	"writeable" => false),
 			Array("ident" => "BatteryStatus", 		"caption" => "Battery Status", 				"type" => "Integer", 	"profile" => "EATONUPS.BatteryStatus",		"oid" => '1.3.6.1.2.1.33.1.2.1.0', 				"factor" => false, 	"writeable" => false),
 			Array("ident" => "OutputPower", 		"caption" => "Output Power", 				"type" => "Float", 		"profile" => "~Watt.3680",					"oid" => '1.3.6.1.2.1.33.1.4.4.1.4.1', 			"factor" => false, 	"writeable" => false),
-			Array("ident" => "OutputLoad", 			"caption" => "Output Load", 				"type" => "Integer", 	"profile" => "~Intensity.100",				"oid" => '1.3.6.1.2.1.33.1.4.4.1.5.1',				"factor" => false, 	"writeable" => false)
+			Array("ident" => "OutputLoad", 			"caption" => "Output Load", 				"type" => "Integer", 	"profile" => "~Intensity.100",				"oid" => '1.3.6.1.2.1.33.1.4.4.1.5.1',			"factor" => false, 	"writeable" => false),
+			Array("ident" => "InternalTemperature",	"caption" => "Internal Temperature", 		"type" => "Float", 		"profile" => "~Temperature",				"oid" => '1.3.6.1.4.1.534.1.6.5',				"factor" => 0.1, 	"writeable" => false)
 		);
 	}
  
