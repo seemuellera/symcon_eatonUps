@@ -26,7 +26,9 @@ class EatonUps extends IPSModule {
 			Array("ident" => "BatteryStatus", 		"caption" => "Battery Status", 				"type" => "Integer", 	"profile" => "EATONUPS.BatteryStatus",		"oid" => '1.3.6.1.2.1.33.1.2.1.0', 				"factor" => false, 	"writeable" => false),
 			Array("ident" => "OutputPower", 		"caption" => "Output Power", 				"type" => "Float", 		"profile" => "~Watt.3680",					"oid" => '1.3.6.1.2.1.33.1.4.4.1.4.1', 			"factor" => false, 	"writeable" => false),
 			Array("ident" => "OutputLoad", 			"caption" => "Output Load", 				"type" => "Integer", 	"profile" => "~Intensity.100",				"oid" => '1.3.6.1.2.1.33.1.4.4.1.5.1',			"factor" => false, 	"writeable" => false),
-			Array("ident" => "InternalTemperature",	"caption" => "Internal Temperature", 		"type" => "Float", 		"profile" => "~Temperature",				"oid" => '1.3.6.1.4.1.534.1.6.1.0',				"factor" => false, 	"writeable" => false)
+			Array("ident" => "InternalTemperature",	"caption" => "Internal Temperature", 		"type" => "Float", 		"profile" => "~Temperature",				"oid" => '1.3.6.1.4.1.534.1.6.1.0',				"factor" => false, 	"writeable" => false),
+			Array("ident" => "InputSource",			"caption" => "Input Source", 				"type" => "Integer", 	"profile" => "EATONUPS.InputSource",		"oid" => '1.3.6.1.4.1.534.1.3.5.0',				"factor" => false, 	"writeable" => false),
+			Array("ident" => "OutputSource",		"caption" => "Output Source", 				"type" => "Integer", 	"profile" => "EATONUPS.OutputSource",		"oid" => '1.3.6.1.4.1.534.1.4.5.0',				"factor" => false, 	"writeable" => false)
 		);
 	}
  
@@ -55,6 +57,40 @@ class EatonUps extends IPSModule {
 		IPS_SetVariableProfileAssociation($variableProfileBatteryStatus, 3, "Low", "", 0xFFFF00);
 		IPS_SetVariableProfileAssociation($variableProfileBatteryStatus, 4, "Depleted", "", 0xFF0000);
 	
+		$variableProfileInputSource = "EATONUPS.InputSource";
+		if (IPS_VariableProfileExists($variableProfileInputSource) ) {
+		
+			IPS_DeleteVariableProfile($variableProfileInputSource);
+		}			
+		IPS_CreateVariableProfile($variableProfileInputSource, 1);
+		IPS_SetVariableProfileIcon($variableProfileInputSource, "Electricity");
+		IPS_SetVariableProfileAssociation($variableProfileInputSource, 1, "Other", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileInputSource, 2, "None", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileInputSource, 3, "Primary Utility", "", 0x00FF00);
+		IPS_SetVariableProfileAssociation($variableProfileInputSource, 4, "Bypass Feed", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileInputSource, 5, "Secondary Utility", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileInputSource, 6, "Generator", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileInputSource, 7, "Flywheel", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileInputSource, 8, "Fuel Cell", "", -1);
+
+		$variableProfileOutputSource = "EATONUPS.OutputSource";
+		if (IPS_VariableProfileExists($variableProfileOutputSource) ) {
+		
+			IPS_DeleteVariableProfile($variableProfileOutputSource);
+		}			
+		IPS_CreateVariableProfile($variableProfileOutputSource, 1);
+		IPS_SetVariableProfileIcon($variableProfileOutputSource, "Electricity");
+		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 1, "Other", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 2, "None", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 3, "Normal", "", 0x00FF00);
+		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 4, "Bypass Feed", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 5, "Battery", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 6, "Booster", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 7, "Reducer", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 8, "Parallel Capacity", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 9, "Parallel Redundant", "", -1);
+		IPS_SetVariableProfileAssociation($variableProfileOutputSource, 10, "High Efficiency Mode", "", -1);
+
 		// Variables
 		$stringVariables = $this->GetVariablesByType("String");
 		foreach ($stringVariables as $currentVariable) {
